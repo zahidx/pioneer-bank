@@ -14,11 +14,11 @@
         <h1 class="text-center" >Welcome to pioneer bank</h1>
         <div class="submit-area">
             <h4>Login</h4>
-            <input type="text" class="form-control" placeholder="Email">
+            <input type="text" class="form-control" id ="username" placeholder="Email">
             <br>
-            <input type="password" name="" id="" class="form-control" placeholder="password">
+            <input type="password" id ="password" class="form-control" placeholder="password">
             <br>
-            <button id="login" class="btn btn-success" class="form-control" >Enter</button>
+            <button  id="login" class="btn btn-success" class="form-control" >Enter</button>
         </div>
     </div>
     <div id="transaction-area" >
@@ -67,14 +67,26 @@
     </div>
     <script>
         //login button even handlers
-        const loginBtn = document.getElementById('login');
-        loginBtn.addEventListener('click', function(){ 
-            const loginArea = document.getElementById('login-area');
-            loginArea.style.display = 'none';
-            const transactionArea = document.getElementById('transaction-area');
-            transactionArea.style.display = 'block';
-        });
+            const loginBtn = document.getElementById('login');
+            loginBtn.addEventListener('click', function(){ 
+                if(validate()==true){
+                    alert('login success');
+                    
+                    const loginArea = document.getElementById('login-area');
+                    loginArea.style.display = 'none';
+                    const transactionArea = document.getElementById('transaction-area');
+                    transactionArea.style.display = 'block';
+                }
+                else{
+                    alert('please enter valid username and password');
+                }
+                
 
+           
+        });
+        
+            
+        
         //deposit button even handlers
         const depositBtn = document.getElementById('addDeposit');
         depositBtn.addEventListener("click", function(){
@@ -89,9 +101,6 @@
             const currentBalanceNumber = parseFloat(currentBalance);
             const totalBalance = currentBalanceNumber + depositNumber;
             document.getElementById("currentBalance").innerText = totalBalance;
-
-
-
             document.getElementById('depositAmount').value = '';
             
         })
@@ -113,24 +122,25 @@
             document.getElementById('currentWithdraw').innerText = totalWithdraw;
 
             document.getElementById('withdrawAmount').value = '';
-
-
-            
-            
+               
         })
 
-            
-
-            
-
-
-        
-        
-
-
-
-
-
+    </script>
+    <script>
+        function validate()
+        {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if(username == "admin" && password == 1234)
+            {
+                return true;
+               
+            }
+            else
+            {
+                return false;
+            }
+        }
     </script>
 </body>
 </html>
