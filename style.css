@@ -6,6 +6,20 @@ body{
     padding: 40px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px gray;
+    background-color: rgb(116, 255, 255);
+
+}
+.clsDeposit{
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+    background-color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+
+
 
 }
 #transaction-area{
@@ -28,3 +42,4 @@ body{
     padding: 20px;
     border-radius: 10px;
 }
+
